@@ -6,8 +6,7 @@
     "level": "error"
   },
   "max_line_length": {
-    "level": "ignore",
-    "value": 100
+    "level": "ignore"
   },
   "colon_assignment_spacing": {
     "level": "error",
