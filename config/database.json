@@ -1,0 +1,16 @@
+var SteamUser = require('steam-user');
+var SteamTotp = require('steam-totp');
+var user = new SteamUser();
+ 
+user.logOn({
+    accountName: "EnterAccountName",
+    password: "EnterPassword",
+    oneFactorCode: SteamTotp.getAuthCode("")
+});
+ 
+user.on('webSession', function() {
+    console.log('Logged in!');
+    user.setPersona(SteamUser.Steam.EPersonaState.Offline) // Set to offline or online - your choice.
+    user.gamesPlayed([10]); // Enter ID of the steam game. Found in the store link (/app/10) is Counter-Strike
+ 
+});
